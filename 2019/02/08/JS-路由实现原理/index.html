@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS 路由实现原理 | bates blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Javascript," />
+  
+
+  <meta name="description" content="前端路由的诞生的缘由90年代初，大多数网页都是通过直接返回HTML的，每次用户操作都需要刷新页面。及其影响交互，Ajax在这时候应运而生。有了Ajax后，用户操作不用每次都刷新页面，体验带来了极大的提升。而异步交互体验的更高级版本就是 SPA（Single Page Application）—— 单页应用。单页应用不仅仅是在页面交互是无刷新的，连页面跳转都是无刷新的，为了实现单页应用，所以就有了前">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 路由实现原理">
+<meta property="og:url" content="https://ln-bates.github.io/2019/02/08/JS-路由实现原理/index.html">
+<meta property="og:site_name" content="bates blog">
+<meta property="og:description" content="前端路由的诞生的缘由90年代初，大多数网页都是通过直接返回HTML的，每次用户操作都需要刷新页面。及其影响交互，Ajax在这时候应运而生。有了Ajax后，用户操作不用每次都刷新页面，体验带来了极大的提升。而异步交互体验的更高级版本就是 SPA（Single Page Application）—— 单页应用。单页应用不仅仅是在页面交互是无刷新的，连页面跳转都是无刷新的，为了实现单页应用，所以就有了前">
+<meta property="og:updated_time" content="2019-03-05T11:11:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS 路由实现原理">
+<meta name="twitter:description" content="前端路由的诞生的缘由90年代初，大多数网页都是通过直接返回HTML的，每次用户操作都需要刷新页面。及其影响交互，Ajax在这时候应运而生。有了Ajax后，用户操作不用每次都刷新页面，体验带来了极大的提升。而异步交互体验的更高级版本就是 SPA（Single Page Application）—— 单页应用。单页应用不仅仅是在页面交互是无刷新的，连页面跳转都是无刷新的，为了实现单页应用，所以就有了前">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">Go</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">Go</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由的诞生的缘由"><span class="toc-text">前端路由的诞生的缘由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由实现"><span class="toc-text">路由实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在2014年之前，大家是通过hash来实现路由的。"><span class="toc-text">在2014年之前，大家是通过hash来实现路由的。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在2014年之前，大家是通过hash来实现路由的。-1"><span class="toc-text">在2014年之前，大家是通过hash来实现路由的。</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-JS-路由实现原理" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">JS 路由实现原理</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.02.08</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>bates</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://ln-bates.github.io//2019/02/08/JS-路由实现原理/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="前端路由的诞生的缘由"><a href="#前端路由的诞生的缘由" class="headerlink" title="前端路由的诞生的缘由"></a>前端路由的诞生的缘由</h3><p>90年代初，大多数网页都是通过直接返回HTML的，每次用户操作都需要刷新页面。及其影响交互，Ajax在这时候应运而生。<br>有了Ajax后，用户操作不用每次都刷新页面，体验带来了极大的提升。<br>而异步交互体验的更高级版本就是 SPA（Single Page Application）—— 单页应用。单页应用不仅仅是在页面交互是无刷新的，连页面跳转都是无刷新的，为了实现单页应用，所以就有了前端路由</p>
+<h3 id="路由实现"><a href="#路由实现" class="headerlink" title="路由实现"></a>路由实现</h3><h5 id="在2014年之前，大家是通过hash来实现路由的。"><a href="#在2014年之前，大家是通过hash来实现路由的。" class="headerlink" title="在2014年之前，大家是通过hash来实现路由的。"></a>在2014年之前，大家是通过hash来实现路由的。</h5><p><code>http:www.xxx.com/#/hash1</code><br>‘#’号后边的值变化，不会重新向服务器发送请求，所以就不不会在刷新页面。<br>通过hashchange事件我们可以监听hash值的变化，使用JS来替换DOM。</p>
+<h5 id="在2014年之前，大家是通过hash来实现路由的。-1"><a href="#在2014年之前，大家是通过hash来实现路由的。-1" class="headerlink" title="在2014年之前，大家是通过hash来实现路由的。"></a>在2014年之前，大家是通过hash来实现路由的。</h5><p>14年后，因为HTML5标准发布。<br>多了两个 API，pushState 和 replaceState，<br>通过这两个 API 可以改变 url 地址且不会发送请求。<br>同时还有 onpopstate 事件。<br>通过这些就能用另一种方式来实现前端路由了，但原理都是跟 hash 实现相同的。<br>用了 HTML5 的实现，<br>单页路由的 url 就不会多出一个#，变得更加美观。<br>但因为没有 # 号，所以当用户刷新页面之类的操作时，浏览器还是会给服务器发送请求。<br>为了避免出现这种情况，<br>所以这个实现需要服务器的支持，需要把所有路由都重定向到根页面。</p>
+
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/01/03/Vue-多页面配置/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'https://ln-bates.github.io/2019/02/08/JS-路由实现原理/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

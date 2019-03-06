@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>meta标签整理 | bates blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="HTML," />
+  
+
+  <meta name="description" content="文章内容均来自他出，每次都会用到一些meta标签，这里做一下整理 声明文档使用的字符编码&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; 移动端开发Viewportwidth=viewport 宽度(数值/device-width) height=viewport 高度(数值/device-height) initial-scale 初始缩放比例 maximum-sca">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="meta标签整理">
+<meta property="og:url" content="https://ln-bates.github.io/2017/03/19/meta标签整理/index.html">
+<meta property="og:site_name" content="bates blog">
+<meta property="og:description" content="文章内容均来自他出，每次都会用到一些meta标签，这里做一下整理 声明文档使用的字符编码&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; 移动端开发Viewportwidth=viewport 宽度(数值/device-width) height=viewport 高度(数值/device-height) initial-scale 初始缩放比例 maximum-sca">
+<meta property="og:updated_time" content="2019-03-05T08:48:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="meta标签整理">
+<meta name="twitter:description" content="文章内容均来自他出，每次都会用到一些meta标签，这里做一下整理 声明文档使用的字符编码&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; 移动端开发Viewportwidth=viewport 宽度(数值/device-width) height=viewport 高度(数值/device-height) initial-scale 初始缩放比例 maximum-sca">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">Go</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">Go</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明文档使用的字符编码"><span class="toc-text">声明文档使用的字符编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动端开发Viewport"><span class="toc-text">移动端开发Viewport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置IE浏览器渲染页面的兼容模式"><span class="toc-text">设置IE浏览器渲染页面的兼容模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SEO优化"><span class="toc-text">SEO优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#禁止数字识自动别为电话号码"><span class="toc-text">禁止数字识自动别为电话号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#禁止识别邮箱"><span class="toc-text">禁止识别邮箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#国产浏览器指定模式渲染"><span class="toc-text">国产浏览器指定模式渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QQ浏览器"><span class="toc-text">QQ浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UC浏览器"><span class="toc-text">UC浏览器</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-meta标签整理" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">meta标签整理</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.03.19</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>bates</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://ln-bates.github.io//2017/03/19/meta标签整理/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>文章内容均来自他出，每次都会用到一些meta标签，这里做一下整理</p>
+<h3 id="声明文档使用的字符编码"><a href="#声明文档使用的字符编码" class="headerlink" title="声明文档使用的字符编码"></a>声明文档使用的字符编码</h3><p><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></p>
+<h3 id="移动端开发Viewport"><a href="#移动端开发Viewport" class="headerlink" title="移动端开发Viewport"></a>移动端开发Viewport</h3><p><code>width=viewport</code> 宽度(数值/device-width)</p>
+<p><code>height=viewport</code> 高度(数值/device-height)</p>
+<p><code>initial-scale</code> 初始缩放比例</p>
+<p><code>maximum-scale</code> 最大缩放比例</p>
+<p><code>minimum-scale</code> 最小缩放比例</p>
+<p><code>user-scalable</code> 是否允许用户缩放(yes/no)</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;</code></p>
+<h3 id="设置IE浏览器渲染页面的兼容模式"><a href="#设置IE浏览器渲染页面的兼容模式" class="headerlink" title="设置IE浏览器渲染页面的兼容模式"></a>设置IE浏览器渲染页面的兼容模式</h3><p><code>ie=edge</code> 以IE可用最高版本渲染页面</p>
+<p><code>chrome=1</code> Google Chrome Frame(谷歌内嵌浏览器框架GCF)，插件可以让用户的IE浏览器外不变，但用户在浏览网页时，实际上使用的是Chrome浏览器内核</p>
+<p><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge, chrome=1&quot;&gt;</code></p>
+<h3 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 定义页面的关键词，一般不超过100字符 --&gt;</div><div class="line">&lt;meta name=&quot;keywords&quot; content=&quot;key1, key2, ...&quot;&gt;</div><div class="line"></div><div class="line">&lt;!-- 定义页面的描述，一般不超过200字符 --&gt;</div><div class="line">&lt;meta name=&quot;description&quot; content=&quot;描述不超过200字符&quot;&gt;</div></pre></td></tr></table></figure>
+<h3 id="禁止数字识自动别为电话号码"><a href="#禁止数字识自动别为电话号码" class="headerlink" title="禁止数字识自动别为电话号码"></a>禁止数字识自动别为电话号码</h3><p><code>&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;</code></p>
+<h3 id="禁止识别邮箱"><a href="#禁止识别邮箱" class="headerlink" title="禁止识别邮箱"></a>禁止识别邮箱</h3><p><code>&lt;meta name=&quot;format-detection&quot; content=&quot;email=no&quot;&gt;</code></p>
+<h3 id="国产浏览器指定模式渲染"><a href="#国产浏览器指定模式渲染" class="headerlink" title="国产浏览器指定模式渲染"></a>国产浏览器指定模式渲染</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 360写法 --&gt;</div><div class="line">&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt; </div><div class="line">&lt;!-- 其他浏览器写法 --&gt;</div><div class="line">&lt;meta name=&quot;force-rendering&quot; content=&quot;webkit&quot;&gt;</div></pre></td></tr></table></figure>
+<h3 id="QQ浏览器"><a href="#QQ浏览器" class="headerlink" title="QQ浏览器"></a>QQ浏览器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 在指定方向上锁定屏幕（锁定横/竖屏） --&gt;</div><div class="line">&lt;meta name=&quot;x5-orientation&quot; content=&quot;landscape/portrait&quot;&gt;</div><div class="line">&lt;!-- 全屏显示此页面 --&gt;</div><div class="line">&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;&gt;</div><div class="line">&lt;!-- 页面将以“应用模式”显示（全屏等）--&gt;</div><div class="line">&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;&gt;</div></pre></td></tr></table></figure>
+<h3 id="UC浏览器"><a href="#UC浏览器" class="headerlink" title="UC浏览器"></a>UC浏览器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 在指定方向上锁定屏幕（锁定横/竖屏） --&gt;</div><div class="line">&lt;meta name=&quot;x5-orientation&quot; content=&quot;landscape/portrait&quot;&gt;</div><div class="line">&lt;!-- 全屏显示此页面 --&gt;</div><div class="line">&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;&gt;</div><div class="line">&lt;!-- 页面将以“应用模式”显示（全屏等）--&gt;</div><div class="line">&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;&gt;</div></pre></td></tr></table></figure>
+
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/03/18/Markdown-基本语法/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/05/29/npm-常用命令/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'https://ln-bates.github.io/2017/03/19/meta标签整理/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
