@@ -1,0 +1,6 @@
+.content.content-about .dot.icon{
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+}
