@@ -7,25 +7,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>让盒子居中的几种方法 | bates blog</title>
+  <title>JS 数组方法-2 | bates blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="CSS," />
+    <meta name="keywords" content="Javascript," />
   
 
-  <meta name="description" content="让已知宽度和高度的盒子居中的两种方法，通过绝对定位实现，会跟着浏览器窗口的缩放不断调整位置，一直居中方法一：通过绝对定位，定位时上边距与左边距都给50%，在利用margin减去当前盒子的一半宽度与高度12345678.box &amp;#123;    position: absolute;    top: 50%;    left: 50%;    width: 100px;    height: 10">
-<meta name="keywords" content="CSS">
+  <meta name="description" content="位置方法arr.indexOf(); // 正序检错, 返回对应索引, 没有返回-1arr.lastIndexOf(); // 倒叙检索, 返回对应索引, 没有返回12let arr = [1, 2, 3, 4];arr.indexOf(1); // 0 迭代方法arr.every(); // 遍历每项, 每一项返回true即返回truearr.some(); // 遍历每项, 某一项返回true">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让盒子居中的几种方法">
-<meta property="og:url" content="https://ln-bates.github.io/2017/06/01/让盒子居中的几种方法/index.html">
+<meta property="og:title" content="JS 数组方法-2">
+<meta property="og:url" content="https://ln-bates.github.io/2017/09/13/JS-数组方法-2/index.html">
 <meta property="og:site_name" content="bates blog">
-<meta property="og:description" content="让已知宽度和高度的盒子居中的两种方法，通过绝对定位实现，会跟着浏览器窗口的缩放不断调整位置，一直居中方法一：通过绝对定位，定位时上边距与左边距都给50%，在利用margin减去当前盒子的一半宽度与高度12345678.box &amp;#123;    position: absolute;    top: 50%;    left: 50%;    width: 100px;    height: 10">
-<meta property="og:updated_time" content="2019-03-05T08:46:12.000Z">
+<meta property="og:description" content="位置方法arr.indexOf(); // 正序检错, 返回对应索引, 没有返回-1arr.lastIndexOf(); // 倒叙检索, 返回对应索引, 没有返回12let arr = [1, 2, 3, 4];arr.indexOf(1); // 0 迭代方法arr.every(); // 遍历每项, 每一项返回true即返回truearr.some(); // 遍历每项, 某一项返回true">
+<meta property="og:updated_time" content="2019-03-12T10:02:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让盒子居中的几种方法">
-<meta name="twitter:description" content="让已知宽度和高度的盒子居中的两种方法，通过绝对定位实现，会跟着浏览器窗口的缩放不断调整位置，一直居中方法一：通过绝对定位，定位时上边距与左边距都给50%，在利用margin减去当前盒子的一半宽度与高度12345678.box &amp;#123;    position: absolute;    top: 50%;    left: 50%;    width: 100px;    height: 10">
+<meta name="twitter:title" content="JS 数组方法-2">
+<meta name="twitter:description" content="位置方法arr.indexOf(); // 正序检错, 返回对应索引, 没有返回-1arr.lastIndexOf(); // 倒叙检索, 返回对应索引, 没有返回12let arr = [1, 2, 3, 4];arr.indexOf(1); // 0 迭代方法arr.every(); // 遍历每项, 每一项返回true即返回truearr.some(); // 遍历每项, 某一项返回true">
 
   
 
@@ -171,17 +171,22 @@
 </div>
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#位置方法"><span class="toc-text">位置方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代方法"><span class="toc-text">迭代方法</span></a></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
-   <article id="post-让盒子居中的几种方法" class="article article-type-post" itemprop="blogPost">
+   <article id="post-JS-数组方法-2" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">让盒子居中的几种方法</h1>
+    <h1 class="post-title">JS 数组方法-2</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2017.06.01</span>
+        <span>2017.09.13</span>
       </span>
 
       
@@ -202,7 +207,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="https://ln-bates.github.io//2017/06/01/让盒子居中的几种方法/#disqus_thread"></a>
+          <a href="https://ln-bates.github.io//2017/09/13/JS-数组方法-2/#disqus_thread"></a>
         </span>
       
 
@@ -221,9 +226,8 @@
 
   <div class="article-content">
     
-      <p>让已知宽度和高度的盒子居中的两种方法，通过绝对定位实现，会跟着浏览器窗口的缩放不断调整位置，一直居中<br>方法一：通过绝对定位，定位时上边距与左边距都给50%，在利用margin减去当前盒子的一半宽度与高度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    position: absolute;</div><div class="line">    top: 50%;</div><div class="line">    left: 50%;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    margin: -50px 0 0 -50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>方法二：通过绝对定位给4个方向都为0；用margin自动，实现居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    position: absolute;</div><div class="line">    top: 0;</div><div class="line">    right: 0;</div><div class="line">    bottom: 0;</div><div class="line">    left: 0;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    margin: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>方法三：在不知道width、height的情况下，利用transform:translate(-50%, -50%)一样可以做到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    position: absolute;</div><div class="line">    top: 50%;</div><div class="line">    left: 50%;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    transform: translate(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+      <h3 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h3><p>arr.indexOf(); // 正序检错, 返回对应索引, 没有返回-1<br>arr.lastIndexOf(); // 倒叙检索, 返回对应索引, 没有返回<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let arr = [1, 2, 3, 4];</div><div class="line">arr.indexOf(1); // 0</div></pre></td></tr></table></figure></p>
+<h3 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h3><p>arr.every(); // 遍历每项, 每一项返回true即返回true<br>arr.some(); // 遍历每项, 某一项返回true即返回true<br>arr.map(); // 返回新数组<br>arr.filter(); // 遍历每项, 返回符合条件的组成的新数组<br>arr.forEach(); // 迭代数组没有返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">let arr = [1, 2, 3, 4];</div><div class="line"></div><div class="line">let greaterThanZero = arr.every((item, index) =&gt;&#123; </div><div class="line">    return (item &gt; 0); </div><div class="line">&#125;);</div><div class="line">console.log(greaterThanZero); // true</div><div class="line"></div><div class="line">let greaterThanFive = arr.some((item, index) =&gt;&#123; </div><div class="line">    return (item &gt; 5); </div><div class="line">&#125;);</div><div class="line">console.log(greaterThanFive); // false</div><div class="line"></div><div class="line">let newArr1 = arr.map((item, index) =&gt;&#123; </div><div class="line">    return item * 2; </div><div class="line">&#125;);</div><div class="line">console.log(newArr1); // 2, 4, 6, 8</div><div class="line"></div><div class="line">let newArr2 = arr.filter((item, index) =&gt;&#123; </div><div class="line">    return item &gt; 1; </div><div class="line">&#125;);</div><div class="line">console.log(newArr2); // 2, 3, 4</div><div class="line"></div><div class="line">arr.forEach((item, index) =&gt;&#123; </div><div class="line">    // handle</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
     
   </div>
@@ -254,10 +258,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2017/05/29/npm-常用命令/">
+    <a class="show pull-left" href="/2017/09/13/JS-数组方法-1/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/09/13/JS-数组方法-1/">
+    <a class="show pull-right" href="/2017/12/08/JS-闭包的理解/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -371,7 +375,7 @@
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'https://ln-bates.github.io/2017/06/01/让盒子居中的几种方法/';
+    var disqus_url = 'https://ln-bates.github.io/2017/09/13/JS-数组方法-2/';
     
     (function(){
       var dsq = document.createElement('script');
