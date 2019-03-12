@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 
 
-  <html class="light page-archives2019">
+  <html class="light page-post">
 
 
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2019 | bates blog</title>
+  <title>静态资源优化方案 | bates blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="前端,Hexo主题,前端开发,用户体验,frontend,design,nodejs,JavaScript" />
+    <meta name="keywords" content="其他," />
   
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="bates blog">
-<meta property="og:url" content="https://ln-bates.github.io/archives/2019/index.html">
+  <meta name="description" content="配置超长时间的本地缓存 —— 节省带宽，提高性能 采用内容摘要作为缓存更新依据 —— 精确的缓存 控制静态资源CDN部署 —— 优化网络请求更资源发布路径 实现非覆盖式发布  —— 平滑升级  转载自:">
+<meta name="keywords" content="其他">
+<meta property="og:type" content="article">
+<meta property="og:title" content="静态资源优化方案">
+<meta property="og:url" content="https://ln-bates.github.io/2019/03/12/静态资源优化方案/index.html">
 <meta property="og:site_name" content="bates blog">
+<meta property="og:description" content="配置超长时间的本地缓存 —— 节省带宽，提高性能 采用内容摘要作为缓存更新依据 —— 精确的缓存 控制静态资源CDN部署 —— 优化网络请求更资源发布路径 实现非覆盖式发布  —— 平滑升级  转载自:">
+<meta property="og:updated_time" content="2019-03-12T10:09:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bates blog">
+<meta name="twitter:title" content="静态资源优化方案">
+<meta name="twitter:description" content="配置超长时间的本地缓存 —— 节省带宽，提高性能 采用内容摘要作为缓存更新依据 —— 精确的缓存 控制静态资源CDN部署 —— 优化网络请求更资源发布路径 实现非覆盖式发布  —— 平滑升级  转载自:">
 
   
 
@@ -83,17 +88,8 @@
     <span id="toolbox-mobile" class="toolbox-mobile">Go</span>
   
 
-  <div class="content content-archive">
-  <div class="page-header">
-
-  
-    <div class="breadcrumb">
-      <div class="location">博客</div>
-      <i class="icon-location"></i>
-    </div>
-  
-
-  
+  <div class="post-header CENTER">
+   
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
       <span class="toolbox-entry-text">Go</span>
@@ -172,67 +168,108 @@
   </div>
 
 
+</div>
 
-  <div class="box-blog-info">
-    <a class="avatar" href="/">
-      <img src="/images/avatar.jpg" alt="" />
-    </a>
-    <div class="info">
-      <h3 class="name" style="font-family: calligraffittiregular">
-        Bates
-      </h3>
-      <div class="slogan">
-        death is just a part of life someting we are destined to do
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-静态资源优化方案" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">静态资源优化方案</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.03.12</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>bates</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://ln-bates.github.io//2019/03/12/静态资源优化方案/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <ol>
+<li>配置超长时间的本地缓存 —— 节省带宽，提高性能</li>
+<li>采用内容摘要作为缓存更新依据 —— 精确的缓存</li>
+<li>控制静态资源CDN部署 —— 优化网络请求更资源发布路径</li>
+<li>实现非覆盖式发布  —— 平滑升级</li>
+</ol>
+<p><a href="https://www.zhihu.com/question/20790576/answer/32602154" title="静态资源部署优化方案" target="_blank" rel="external">转载自:</a></p>
+
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
       </div>
     </div>
   </div>
 
-</div>
 
-
-  <div class="post-list-box archive-body">
-    <ul class="list-post">  <li class="item-year item item-title item-title-4">
-    <a href="/archives/2019" class="text-year">
-      2019
-      <i class="icon-zhu"></i>
-      
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/02/08/JS-路由实现原理/">
+        <i class="icon icon-angle-left"></i>
     </a>
-  </li>
-<li class="item-post item">
-  <span class="post-date">03-12</span>
-
-  
-  <a class="post-title" href="/2019/03/12/静态资源优化方案/">静态资源优化方案</a>
-
-
-</li>
-<li class="item-post item">
-  <span class="post-date">02-08</span>
-
-  
-  <a class="post-title" href="/2019/02/08/JS-路由实现原理/">JS 路由实现原理</a>
-
-
-</li>
-<li class="item-post item">
-  <span class="post-date">01-03</span>
-
-  
-  <a class="post-title" href="/2019/01/03/Vue-多页面配置/">Vue 多页面配置</a>
-
-
-</li>
-</ul>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
   </div>
 
-  <div class="archive-footer">
-    
 
-  </div>
+
+
 </div>
 
 
-
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
 
 
 
@@ -320,6 +357,44 @@
 </div>
 
 
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'https://ln-bates.github.io/2019/03/12/静态资源优化方案/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
 
   
 

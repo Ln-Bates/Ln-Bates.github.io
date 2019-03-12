@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 
 
-  <html class="light page-archives2019">
+  <html class="light page-post">
 
 
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2019 | bates blog</title>
+  <title>Vue 生命周期 | bates blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="前端,Hexo主题,前端开发,用户体验,frontend,design,nodejs,JavaScript" />
+    <meta name="keywords" content="Vue," />
   
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="bates blog">
-<meta property="og:url" content="https://ln-bates.github.io/archives/2019/index.html">
+  <meta name="description" content="生命周期就是Vue实例从创建到销毁的过程,由开始创建, 初始化数据, 编译模板, 挂载dom, 更新, 卸载等一系列过程 总共分为八个阶段 创建前/后 (beforeCreate/created), 载入前/后 (beforeMount/mounted), 更新前/后 (beforeUpdate/updated), 销毁前/销毁后 (beforeDestroy/destroyed) 适用场景  b">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 生命周期">
+<meta property="og:url" content="https://ln-bates.github.io/2018/06/12/Vue-生命周期/index.html">
 <meta property="og:site_name" content="bates blog">
+<meta property="og:description" content="生命周期就是Vue实例从创建到销毁的过程,由开始创建, 初始化数据, 编译模板, 挂载dom, 更新, 卸载等一系列过程 总共分为八个阶段 创建前/后 (beforeCreate/created), 载入前/后 (beforeMount/mounted), 更新前/后 (beforeUpdate/updated), 销毁前/销毁后 (beforeDestroy/destroyed) 适用场景  b">
+<meta property="og:updated_time" content="2019-03-12T10:20:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bates blog">
+<meta name="twitter:title" content="Vue 生命周期">
+<meta name="twitter:description" content="生命周期就是Vue实例从创建到销毁的过程,由开始创建, 初始化数据, 编译模板, 挂载dom, 更新, 卸载等一系列过程 总共分为八个阶段 创建前/后 (beforeCreate/created), 载入前/后 (beforeMount/mounted), 更新前/后 (beforeUpdate/updated), 销毁前/销毁后 (beforeDestroy/destroyed) 适用场景  b">
 
   
 
@@ -83,17 +88,8 @@
     <span id="toolbox-mobile" class="toolbox-mobile">Go</span>
   
 
-  <div class="content content-archive">
-  <div class="page-header">
-
-  
-    <div class="breadcrumb">
-      <div class="location">博客</div>
-      <i class="icon-location"></i>
-    </div>
-  
-
-  
+  <div class="post-header CENTER">
+   
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
       <span class="toolbox-entry-text">Go</span>
@@ -172,67 +168,121 @@
   </div>
 
 
+</div>
 
-  <div class="box-blog-info">
-    <a class="avatar" href="/">
-      <img src="/images/avatar.jpg" alt="" />
-    </a>
-    <div class="info">
-      <h3 class="name" style="font-family: calligraffittiregular">
-        Bates
-      </h3>
-      <div class="slogan">
-        death is just a part of life someting we are destined to do
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Vue-生命周期" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Vue 生命周期</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.06.12</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>bates</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://ln-bates.github.io//2018/06/12/Vue-生命周期/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>生命周期就是Vue实例从创建到销毁的过程,<br>由开始创建, 初始化数据, 编译模板, 挂载dom, 更新, 卸载等一系列过程</p>
+<p>总共分为八个阶段</p>
+<p>创建前/后 (beforeCreate/created),</p>
+<p>载入前/后 (beforeMount/mounted),</p>
+<p>更新前/后 (beforeUpdate/updated),</p>
+<p>销毁前/销毁后 (beforeDestroy/destroyed)</p>
+<p>适用场景</p>
+<ol>
+<li>beforeCreate: 可以在这加个loading事件，在加载实例时触发 </li>
+<li>created : 初始化完成时的事件写在这里，如在这结束loading事件，异步请求也适宜在这里调用 </li>
+<li>mounted : 挂载元素，获取到DOM节点 </li>
+<li>updated : 如果对数据统一处理，在这里写上相应函数 </li>
+<li>beforeDestroy : 可以做一个确认停止事件的确认框 </li>
+<li>nextTick : 更新数据后立即操作dom</li>
+</ol>
+
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
       </div>
     </div>
   </div>
 
-</div>
 
-
-  <div class="post-list-box archive-body">
-    <ul class="list-post">  <li class="item-year item item-title item-title-4">
-    <a href="/archives/2019" class="text-year">
-      2019
-      <i class="icon-zhu"></i>
-      
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/05/24/本地存储/">
+        <i class="icon icon-angle-left"></i>
     </a>
-  </li>
-<li class="item-post item">
-  <span class="post-date">03-12</span>
-
-  
-  <a class="post-title" href="/2019/03/12/静态资源优化方案/">静态资源优化方案</a>
-
-
-</li>
-<li class="item-post item">
-  <span class="post-date">02-08</span>
-
-  
-  <a class="post-title" href="/2019/02/08/JS-路由实现原理/">JS 路由实现原理</a>
-
-
-</li>
-<li class="item-post item">
-  <span class="post-date">01-03</span>
-
-  
-  <a class="post-title" href="/2019/01/03/Vue-多页面配置/">Vue 多页面配置</a>
-
-
-</li>
-</ul>
+    <a class="show pull-right" href="/2018/06/17/Vue-组件中的通信/">
+        <i class="icon icon-angle-right"></i>
+    </a>
   </div>
 
-  <div class="archive-footer">
-    
 
-  </div>
+
+
 </div>
 
 
-
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
 
 
 
@@ -320,6 +370,44 @@
 </div>
 
 
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'https://ln-bates.github.io/2018/06/12/Vue-生命周期/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
 
   
 
